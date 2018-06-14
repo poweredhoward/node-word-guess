@@ -2,6 +2,7 @@ function Letter(letter){
     this.letter = letter;
     this.guessed = false;
 
+    //How to display each letter
     this.getChar = function(){
         if(this.guessed === false){
             return "_";

@@ -1,13 +1,19 @@
 var letter = require("./letter.js");
+var rand_word = require("random-words");
 
+//TODO: randomise the word
 function Word(){
 
     //Pick a word and make the letters for it
     var letters = [];
 
     var possible_words = [];
-    var word = "stowaway";
+    // var word = "stowaway";
+    var word = rand_word();
+    this.word = word;
     var split_word = word.split("");
+
+    //Make a Letter instance for each letter
     split_word.forEach( function(l){
         var temp = new letter(l);
         letters.push(temp);
@@ -15,9 +21,8 @@ function Word(){
 
     this.letters = letters;
 
-    // console.log(this.letters);
 
-
+    //Display word with letters shown or hidden
     this.showLetters = function(){
         var display = "";
         this.letters.forEach( function(letter){
@@ -27,7 +32,6 @@ function Word(){
         display = display.slice(0, -1);
 
         console.log(display);
-        // console.log(this.letters.join(""));
     }
 
     this.checkGuess = function( guess ){
