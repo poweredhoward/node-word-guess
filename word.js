@@ -1,7 +1,6 @@
 var letter = require("./letter.js");
 var rand_word = require("random-words");
 
-//TODO: randomise the word
 function Word(){
 
     //Pick a word and make the letters for it
@@ -9,6 +8,8 @@ function Word(){
 
     var possible_words = [];
     // var word = "stowaway";
+
+    //Get a random word
     var word = rand_word();
     this.word = word;
     var split_word = word.split("");
